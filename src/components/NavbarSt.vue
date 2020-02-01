@@ -2,22 +2,21 @@
 
   <div>
     <v-app-bar
-      color="deep-purple accent-4"
-      dark
+      class="toolbar back"
     >
       <v-btn
           icon v-on="on"
           @click.stop="drawer = !drawer"
         >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon large class="btn nav icon"></v-app-bar-nav-icon>
       </v-btn>
 
       <!-- <v-toolbar-title>Page title</v-toolbar-title> -->
 
       <v-spacer></v-spacer>
-      <h4>{{$store.getters.name}}  {{$store.getters.surname}}</h4>
-      <v-btn icon>
-        <v-icon @click="LogoutRouter">mdi-logout-variant</v-icon>
+      <h4 class="nametool">{{$store.getters.name}}  {{$store.getters.surname}}</h4>
+      <v-btn icon class="btn nav icon">
+        <v-icon large @click="LogoutRouter()" >mdi-logout-variant</v-icon>
       </v-btn>
 
       <!-- <v-btn icon>
@@ -29,7 +28,7 @@
 
 <v-navigation-drawer
       v-model="drawer"
-      app class = "indigo"
+      app class = "navbar bg"
     >
       <v-list
         nav
@@ -37,18 +36,17 @@
       >
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
         >
           <v-list-item>
-            <v-list-item-title @click="ProfileRouter()"> โปร์ไฟล์ </v-list-item-title>
+            <v-list-item-title @click="ProfileRouter()" class="fontlist i"> โปร์ไฟล์ </v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click="ActivityRouterAll()">กิจกรรมทั้งหมด</v-list-item-title>
+            <v-list-item-title @click="ActivityRouterAll()" class="fontlist i">กิจกรรมทั้งหมด</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click="ActivityRouterU()">กิจกรรมมหาวิทยาลัย</v-list-item-title>
+            <v-list-item-title @click="ActivityRouterU()" class="fontlist i">กิจกรรมมหาวิทยาลัย</v-list-item-title>
           </v-list-item>
 
       <v-menu bottom :offset-x="offset">
@@ -57,16 +55,16 @@
           text
           dark
           v-on="on"
-        >กิจกรรมพัฒนานักศึกษา<br>สู่การเป็นบัณฑิตพึงประสงค์
+        >กิจกรรมพัฒนานักศึกษาสู่<br>การเป็นบัณฑิตพึงประสงค์
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </template>
       <v-list>
-          <v-list-item @click="ActivityRouterD1()">กิจกรรมวิชาการและวิชาชีพ</v-list-item>
-          <v-list-item @click="ActivityRouterD2()">กิจกรรมกีฬาและนันทนาการ</v-list-item>
-          <v-list-item @click="ActivityRouterD3()">กิจรรมบำเพ็ญประโยชน์หรือรักษาสิ่งแวดล้อม</v-list-item>
-          <v-list-item @click="ActivityRouterD4()">กิจกรรมเสริมสร้างคุณธรรม จริยธรรม</v-list-item>
-          <v-list-item @click="ActivityRouterD5()">กิจกรรมอนุรักษ์ศิลปวัฒนธรรม</v-list-item>
+          <v-list-item @click="ActivityRouterD1()" class="fontlist i">กิจกรรมวิชาการและวิชาชีพ</v-list-item>
+          <v-list-item @click="ActivityRouterD2()" class="fontlist i">กิจกรรมกีฬาและนันทนาการ</v-list-item>
+          <v-list-item @click="ActivityRouterD3()" class="fontlist i">กิจรรมบำเพ็ญประโยชน์หรือรักษาสิ่งแวดล้อม</v-list-item>
+          <v-list-item @click="ActivityRouterD4()" class="fontlist i">กิจกรรมเสริมสร้างคุณธรรม จริยธรรม</v-list-item>
+          <v-list-item @click="ActivityRouterD5()" class="fontlist i">กิจกรรมอนุรักษ์ศิลปวัฒนธรรม</v-list-item>
       </v-list>
     </v-menu>
     <br>
@@ -74,7 +72,7 @@
       <template v-slot:activator="{ on }">
         <v-btn
           text
-          dark
+          class="nav btn"
           v-on="on"
         >
           ประวัติกิจกรรม
@@ -82,21 +80,21 @@
         </v-btn>
       </template>
       <v-list>
-          <v-list-item @click="ActivityRouterSave()">กิจกรรมที่บันทึก</v-list-item>
-          <v-list-item @click="ActivityRouterRegis()">กิจกรรมที่ลงทะเบียน</v-list-item>
+          <v-list-item @click="ActivityRouterSave()" class="fontlist i">กิจกรรมที่บันทึก</v-list-item>
+          <v-list-item @click="ActivityRouterRegis()" class="fontlist i">กิจกรรมที่ลงทะเบียน</v-list-item>
       </v-list>
     </v-menu>
 
           <v-list-item>
-            <v-list-item-title @click="QRRouter"> คิวอาร์โค้ด </v-list-item-title>
+            <v-list-item-title @click="QRRouter()" class="fontlist i"> คิวอาร์โค้ด </v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click="ChangepasswordRouter"> เปลี่ยนรหัสผ่าน </v-list-item-title>
+            <v-list-item-title @click="ChangepasswordRouter()"> เปลี่ยนรหัสผ่าน </v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click="TranscriptRouter"> ทรานสคริปกิจกรรม </v-list-item-title>
+            <v-list-item-title @click="TranscriptRouter()"> ทรานสคริปกิจกรรม </v-list-item-title>
           </v-list-item>
 
         </v-list-item-group>

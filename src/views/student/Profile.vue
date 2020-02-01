@@ -1,17 +1,38 @@
 <template>
-    <div>
+    <div>          
         <NavbarSt />
-    <v-container>
-        <v-btn icon right @click="isEditing = !isEditing">
-                     <v-icon large v-if="isEditing==true" >mdi-close</v-icon>
-                     <v-icon large v-else>mdi-pencil</v-icon>             
+        <div >
+          <v-row class="iconedit">
+        <v-col  xs="5" sm="5" md="11" lg="11" xl="11" class="titlepage">ข้อมูลส่วนตัว</v-col>
+        <v-col  xs="1" sm="1" md="1" lg="1" xl="1" class="iconeditac">
+          <v-btn icon  @click="isEditing = !isEditing">
+                      <v-icon large v-if="isEditing==true" >mdi-close</v-icon>
+                     <v-icon large v-else>mdi-pencil</v-icon>              
         </v-btn>
+        </v-col>
+      </v-row>
+        </div>
+        <v-layout
+          align-center
+          justify-center
+        >
+    <v-flex
+            xs10
+            sm10
+            md11
+            lg11
+            xl11
+          >
+    <div class="bbbbb">
+        <div style="margin-bottom:25px">
+      <v-card class="elevation-12 " >
+      <v-card-text >
         <v-row>
-            <v-col cols="6" sm="3">
-                <p >ชื่อ</p >
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">ชื่อ</p >
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.name}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.name}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.name"
@@ -21,11 +42,11 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p >นาสกุล</p >
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">นาสกุล</p >
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.surname}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.surname}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.surname"
@@ -35,29 +56,28 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>เพศ</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left" >เพศ</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.sex_id}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.sex_id}}</p>
                     <v-select 
                     v-if="this.isEditing==true" class="d-flex"
                     item-text="sex_name"
                     item-value="sex_id"
                     v-model="sex_Selected.sex_id"
                     :items="sexs"
-                    label="เพศ"
                     shape
                     outlined
                     ></v-select>
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>ศาสนา</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">ศาสนา</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.religion}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.religion}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.religion"
@@ -67,43 +87,44 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>รหัสนักศึกษา</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">รหัสนักศึกษา</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.stu_id}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.stu_id}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.stu_id"
                     shape
                     outlined
+                    disabled
                 ></v-text-field>
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>สาขา</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">สาขา</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.branch_id}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.branch_id}}</p>
                     <v-select 
                     v-if="this.isEditing==true" class="d-flex"
                     item-text="branch_name"
                     item-value="branch_id"
                     v-model="branch_Selected.branch_id"
                     :items="branchs"
-                    label="สาขาวิชา"
+                    disabled
                     shape
                     outlined
                     ></v-select>
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>ชั้นปี</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">ชั้นปี</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false">{{$store.getters.stu_year}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left">{{$store.getters.stu_year}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.stu_year"
@@ -113,25 +134,26 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>รหัสบัตรประชาชน</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">รหัสบัตรประชาชน</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.card_id}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.card_id}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.card_id"
                     shape
                     outlined
+                    disabled
                 ></v-text-field>
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>โรคประจำตัว</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">โรคประจำตัว</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.disease}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.disease}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.disease"
@@ -141,11 +163,11 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>อาหารที่แพ้</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">อาหารที่แพ้</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.food_allergy}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.food_allergy}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.food_allergy"
@@ -155,11 +177,11 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>ยาที่แพ้</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">ยาที่แพ้</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.be_allergic}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.be_allergic}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.be_allergic"
@@ -169,11 +191,11 @@
             </v-col>
         </v-row> 
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>Email</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">Email</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false">{{$store.getters.email}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left">{{$store.getters.email}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.email"
@@ -183,11 +205,11 @@
             </v-col>
         </v-row>
         <v-row>
-            <v-col cols="6" sm="3">
-                <p>เบอร์โทรศัทพ์</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p class="text-sm-left">เบอร์โทรศัทพ์</p>
             </v-col>
-            <v-col cols="6" sm="6">
-                <p v-if="this.isEditing==false"> {{$store.getters.tel}}</p>
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6">
+                <p v-if="this.isEditing==false" class="text-sm-left"> {{$store.getters.tel}}</p>
                 <v-text-field
                     v-if="this.isEditing==true"
                     v-model="this.tel"
@@ -196,9 +218,12 @@
                 ></v-text-field>
             </v-col>
         </v-row> 
+        </v-card-text>
+    </v-card>
+      </div>
         <v-spacer></v-spacer>
-        <v-row v-if="this.isEditing==true">
-            <v-col cols="12" sm="3">
+        <v-row v-if="this.isEditing==true" >
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6" class="r">
                 <v-btn
                     color="success"
                     @click="save"
@@ -206,7 +231,7 @@
                 บันทึก
                 </v-btn>
             </v-col>
-            <v-col cols="12" sm="3">
+            <v-col cols="6" xs="3" sm="3" md="6" lg="6" xl="6" >
                 <v-btn
                     color="error"
                 >
@@ -214,7 +239,9 @@
                 </v-btn>
             </v-col>
         </v-row>
-    </v-container>
+        </div>
+        </v-flex>
+    </v-layout>
     </div>
 </template>
 <script>

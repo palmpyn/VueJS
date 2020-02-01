@@ -1,22 +1,36 @@
 <template>
   <div>
   <Navbar />
+  <v-layout
+          align-center
+          justify-center
+        >
+    <v-flex
+            xs10
+            sm10
+            md11
+            lg11
+            xl11
+          >
   <v-container>
       <v-row>
         <v-col>
-          <p class="text-sm-left">รายละเอียดกิจกรรม</p>
+          <p class="titlepage">รายละเอียดกิจกรรม <br> {{$store.getters.title}}</p>
         </v-col>
       </v-row>
+      <div style="margin-bottom:25px">
+      <v-card class="elevation-12 " >
+      <v-card-text >
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">ชื่อกิจกรรม</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.title}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">ประเภทกิจกรรม</p>
         </v-col>
         <v-col cols="6" sm="6">
@@ -24,51 +38,51 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">ด้านกิจกรรม</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.subtype_id}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">ปีการศึกษา</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.learn_year}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">เทอม</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.term}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">ชั่วโมงที่ได้รับ</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.hours}}</p>    
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">วันที่</v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6"><p class="text-sm-left">วันที่</p></v-col>
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.date_act_start}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">เวลา</v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6"><p class="text-sm-left">เวลา</p></v-col>
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">{{$store.getters.time_act_start}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">คำอธิบายเพิ่มเติม</p>
         </v-col>
         <v-col cols="6" sm="6">
@@ -76,7 +90,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">สถานที่</p>
         </v-col>
         <v-col cols="6" sm="6">
@@ -84,33 +98,38 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">จำนวนคน</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left" >{{$store.getters.people_regis}} / {{$store.getters.people}}</p>
         </v-col>
       </v-row>
       <v-row>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
           <p class="text-sm-left">ชั้นปี</p>
         </v-col>
-        <v-col cols="6" sm="3">
+        <v-col xs="3" sm="3" md="6" lg="6" xl="6">
          <p class="text-sm-left" >{{$store.getters.stusend_year}}</p>
         </v-col>
       </v-row>
       <v-row>
-      <v-col cols="6" sm="3">
+      <v-col xs="3" sm="3" md="6" lg="6" xl="6">
         <p class="text-sm-left">ลงทะเบียนก่อนวันที่</p>
         </v-col>
         <v-col cols="6" sm="6">
          <p class="text-sm-left" >{{$store.getters.date_regis_end}}</p>
         </v-col>
       </v-row>
-      <iframe v-if="this.googlemap1==true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.353135364267!2d100.50979091414366!3d13.81782129948458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29b9f54b53151%3A0x73d2b2a69752fd89!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lij4Liy4LiK4Lih4LiH4LiE4Lil4Lie4Lij4Liw4LiZ4LiE4LijIOC4qOC4ueC4meC4ouC5jOC4nuC4o-C4sOC4meC4hOC4o-C5gOC4q-C4meC4t-C4rQ!5e0!3m2!1sen!2sth!4v1580320374770!5m2!1sen!2sth" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      <iframe v-if="this.googlemap2==true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1328389048913!2d100.50153781744385!3d13.770861700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299663395992f%3A0xc55aab59e29b6188!2sRajamangala%20University%20of%20Technology%20Phra%20Nakhon!5e0!3m2!1sen!2sth!4v1580322869611!5m2!1sen!2sth" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      <iframe v-if="this.googlemap3==true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.2756386972846!2d100.51138331414315!3d13.762244200760888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29946c66f59bb%3A0xd17babef1865aa08!2sRmutp%20-%20Bangkok%20Commercial%20Campus!5e0!3m2!1sen!2sth!4v1580322961164!5m2!1sen!2sth" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </v-card-text>
+    </v-card>
+      </div>
+      <iframe v-if="this.googlemap1==true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.353135364267!2d100.50979091414366!3d13.81782129948458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29b9f54b53151%3A0x73d2b2a69752fd89!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14Lij4Liy4LiK4Lih4LiH4LiE4Lil4Lie4Lij4Liw4LiZ4LiE4LijIOC4qOC4ueC4meC4ouC5jOC4nuC4o-C4sOC4meC4hOC4o-C5gOC4q-C4meC4t-C4rQ!5e0!3m2!1sen!2sth!4v1580320374770!5m2!1sen!2sth" allowfullscreen=""></iframe>
+      <iframe v-if="this.googlemap2==true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1328389048913!2d100.50153781744385!3d13.770861700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299663395992f%3A0xc55aab59e29b6188!2sRajamangala%20University%20of%20Technology%20Phra%20Nakhon!5e0!3m2!1sen!2sth!4v1580322869611!5m2!1sen!2sth"  allowfullscreen=""></iframe>
+      <iframe v-if="this.googlemap3==true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.2756386972846!2d100.51138331414315!3d13.762244200760888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29946c66f59bb%3A0xd17babef1865aa08!2sRmutp%20-%20Bangkok%20Commercial%20Campus!5e0!3m2!1sen!2sth!4v1580322961164!5m2!1sen!2sth"  allowfullscreen=""></iframe>
       </v-container>
+          </v-flex>
+    </v-layout>
     </div>
 </template>
 <script>

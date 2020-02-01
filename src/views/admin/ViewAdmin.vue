@@ -1,7 +1,17 @@
 <template>
   <div>
     <NavbarAdmin />
-    <div class="bbbbb">
+  <v-layout
+          align-center
+          justify-center
+        >
+    <v-flex
+            xs10
+            sm10
+            md11
+            lg11
+            xl11
+          >
           <v-row >
         <v-col  xs="5" sm="3" md="11" lg="11" xl="11" class="titlepage">รายละเอียดกิจกรรม</v-col>
         <v-col  xs="1" sm="3" md="1" lg="1" xl="1" class="iconeditac">
@@ -12,6 +22,9 @@
         </v-col>
       </v-row>
       <v-spacer></v-spacer>
+      <div style="margin-bottom:25px">
+      <v-card class="elevation-12 " >
+      <v-card-text >
       <v-row>
         <v-col xs="3" sm="3" md="6" lg="6" xl="6" >
           <p>ชื่อกิจกรรม</p>
@@ -170,13 +183,18 @@
       
       <v-row>
         
-        <v-col class="iconeditac">
+        <v-col class="r">
           <v-btn icon color="error"  @click.stop="dialog = true">
               <v-icon large v-if="this.isEditing==false" >mdi-delete-outline</v-icon>         
         </v-btn>
         <center><v-btn color="success" v-if="this.isEditing==true" @click="updateactivity()" >ยืนยันแก้ไขกิจกรรม</v-btn></center>
         </v-col>
-        <v-btn color="success" @click="report()">ดูสรุปข้อมูลการลงทะเบียนกิจกรรม</v-btn>
+        
+      </v-row>
+      <v-row>
+        <v-col class="r">
+      <v-btn color="success" @click="report()">ดูสรุปข้อมูลการลงทะเบียนกิจกรรม</v-btn>
+        </v-col>
       </v-row>
         <v-dialog
       v-model="dialog"
@@ -222,8 +240,11 @@
       </v-card>
     </v-dialog>
     
-    
-    </div>     
+    </v-card-text>
+    </v-card>
+    </div>
+    </v-flex>
+    </v-layout>     
   </div>
 </template>
 

@@ -2,7 +2,23 @@
 <v-form>
     <div>
         <NavbarAdmin />
-        <div class="bbbbb">
+  <v-layout
+          align-center
+          justify-center
+        >
+    <v-flex
+            xs10
+            sm10
+            md11
+            lg11
+            xl11
+          >
+          <v-row >
+        <v-col  xs="5" sm="3" md="11" lg="11" xl="11" class="titlepage">เพิ่มกิจกรรม</v-col>
+          </v-row>
+      <div style="margin-bottom:25px">
+      <v-card class="elevation-12 " >
+      <v-card-text >
             <v-row>
                  <v-col xs="3" sm="3" md="6" lg="6" xl="6" >
                     ชื่อกิจกรรม
@@ -244,8 +260,11 @@
                     > ยกเลิก </v-btn>
                 </v-col>
             </v-row>
-            
-        </div>
+            </v-card-text>
+    </v-card>
+    </div>
+    </v-flex>
+    </v-layout>  
     </div>
 </v-form>
 </template>

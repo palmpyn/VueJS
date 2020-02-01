@@ -2,14 +2,13 @@
 
   <div>
     <v-app-bar
-      color="deep-purple accent-4"
-      dark
+      class="toolbar back"
     >
       <v-btn
           icon
           @click.stop="drawer = !drawer"
         >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon class="btn nav icon" large></v-app-bar-nav-icon>
       </v-btn>
 
       <!-- <v-toolbar-title>Page title</v-toolbar-title> -->
@@ -17,8 +16,8 @@
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" persistent max-width="290">
       <template v-slot:activator="{ on }">
-        <v-btn icon v-on="on">
-        <v-icon >mdi-logout-variant</v-icon>
+        <v-btn icon v-on="on" class="btn nav icon">
+        <v-icon large>mdi-account-outline</v-icon>
       </v-btn>
         
       </template>
@@ -41,9 +40,10 @@
                     label="Password"
                     name="password"
                     :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                    
                     :type="show1 ? 'text' : 'password'"
                     @click:append="show1 = !show1"
+                    shape
+                    outlined
                   ></v-text-field>
                   
                 </v-form>
@@ -52,7 +52,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="error"   @click="dialog=false;passcompare=true" >ยกเลิก</v-btn>
-          <v-btn color="green darken-1"   @click="LoginRouter" >เข้าสู่ระบบ</v-btn>
+          <v-btn color="success"   @click="LoginRouter" >เข้าสู่ระบบ</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -62,7 +62,7 @@
 
 <v-navigation-drawer
       v-model="drawer"
-      app class = "indigo"
+      app class = "navbar bg"
     >
       <v-list
         nav
@@ -72,11 +72,11 @@
           v-model="group"
         >
           <v-list-item>
-            <v-list-item-title @click="ActivityRouterAll">กิจกรรมทั้งหมด</v-list-item-title>
+            <v-list-item-title @click="ActivityRouterAll" class="fontlist i">กิจกรรมทั้งหมด</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click="ActivityRouterU">กิจกรรมมหาวิทยาลัย</v-list-item-title>
+            <v-list-item-title @click="ActivityRouterU" class="fontlist i">กิจกรรมมหาวิทยาลัย</v-list-item-title>
           </v-list-item>
           
           <!-- <v-menu bottom :offset-x="offset"> -->
@@ -84,20 +84,20 @@
       <template v-slot:activator="{ on }">
         <v-btn
           text
-          dark
+          class="nav btn"
           v-on="on"
         >
-          กิจกรรมพัฒนานักศึกษา<br> สู่การเป็นบัณฑิตพึงประสงค์
+          กิจกรรมพัฒนานักศึกษาสู่<br>การเป็นบัณฑิตพึงประสงค์
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </template>
 
       <v-list>
-          <v-list-item @click="ActivityRouterD1">กิจกรรมวิชาการและวิชาชีพ</v-list-item>
-          <v-list-item @click="ActivityRouterD2">กิจกรรมกีฬาและนันทนาการ</v-list-item>
-          <v-list-item @click="ActivityRouterD3">กิจรรมบำเพ็ญประโยชน์หรือรักษาสิ่งแวดล้อม</v-list-item>
-          <v-list-item @click="ActivityRouterD4">กิจกรรมเสริมสร้างคุณธรรม จริยธรรม</v-list-item>
-          <v-list-item @click="ActivityRouterD5">กิจกรรมอนุรักษ์ศิลปวัฒนธรรม</v-list-item>
+          <v-list-item @click="ActivityRouterD1()" class="fontlist i">กิจกรรมวิชาการและวิชาชีพ</v-list-item>
+          <v-list-item @click="ActivityRouterD2()" class="fontlist i">กิจกรรมกีฬาและนันทนาการ</v-list-item>
+          <v-list-item @click="ActivityRouterD3()" class="fontlist i">กิจรรมบำเพ็ญประโยชน์หรือรักษาสิ่งแวดล้อม</v-list-item>
+          <v-list-item @click="ActivityRouterD4()" class="fontlist i">กิจกรรมเสริมสร้างคุณธรรม จริยธรรม</v-list-item>
+          <v-list-item @click="ActivityRouterD5()" class="fontlist i">กิจกรรมอนุรักษ์ศิลปวัฒนธรรม</v-list-item>
 
       </v-list>
     </v-menu>

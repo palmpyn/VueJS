@@ -10,14 +10,14 @@
           icon
           @click.stop="drawer = !drawer"
         >
-        <v-app-bar-nav-icon class="btn nav icon"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon class="btn nav icon" large></v-app-bar-nav-icon>
       </v-btn>
 
       <!-- <v-toolbar-title>Page title</v-toolbar-title> -->
 
       <v-spacer></v-spacer>
       <v-btn icon  class="btn nav icon">
-        <v-icon @click="LogoutRouter">mdi-logout-variant</v-icon>
+        <v-icon large @click="LogoutRouter()" class="btn nav icon">mdi-logout-variant</v-icon>
       </v-btn>
       </v-app-bar>
     </div>
