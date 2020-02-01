@@ -1,0 +1,46 @@
+/* navigation */
+.navbara{
+    background-color: #222D31;
+    position: fixed;
+    font-size: 20px;
+}
+/* tollbar */
+.toolbarnav{
+    background-color: #662E91;
+}
+.navbtn{
+    margin: 8px;
+    padding: 0px;
+}
+.itemnav{
+    margin: 8px;
+    padding: 0px;
+}
+.fontlist{
+    font-size: 16px;
+    color: #ffffff;
+}
+/* จัดข้อความใน row  */
+.text{
+    align-items: center;
+}
+.input{
+    margin-bottom: 0px;
+}
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.tbody:nth-child(even) {
+    background-color: #f2f2f2;
+}
+/* text detail */
+.textde{
+    margin: 0;
+    font-size: 14px;
+}
+/* กรอบ */
+.rec{
+    justify-content: center;
+    border: 1px solid
+}
