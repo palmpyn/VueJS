@@ -35,7 +35,7 @@
                 ></v-text-field>
             </v-col>
         </v-row>
-        <v-row class="conchange">
+        <v-row class="conchange" style="justify-center">
             <v-col >
                 <v-subheader class="font sub">รหัสผ่านใหม่</v-subheader>
             </v-col>
